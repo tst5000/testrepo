@@ -1,0 +1,49 @@
+// QuikMod Buildscript
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            name = "Forge Gradle"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            name = "Gradle Plugins"
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'gradle.plugin.com.rlonryan:QuikMod:1.0.18'
+    }
+}
+
+// Apply QuikMod
+apply plugin: 'com.rlonryan.quikmod'
+
+// Tweak MineCraft Task
+minecraft {
+    makeObfSourceJar = false
+    useDepAts = true
+}
+
+repositories {
+    maven {
+        name "JEI"
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+}
+
+dependencies {
+    shade "org.joml:joml:1.9.2"
+    compile "org.joml:joml:1.9.2:javadoc"
+    compile "org.joml:joml:1.9.2:sources"
+}
+
+// Jar Task
+jar {
+    configurations.shade.each { dep ->
+        from(project.zipTree(dep)){
+            exclude 'META-INF', 'META-INF/**'
+        }
+    }
+}

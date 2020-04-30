@@ -1,0 +1,79 @@
+Changelog
+---------
+1.12.0
+- PORTED  : Ported to Minecraft version 1.12.
+- FIXED   : Fixed memory churn associated with item models rendered using InfinityLib's rendering pipeline.
+- TWEAK   : Cleaned up rendering pipeline in the hopes of improving overall performance and extensibility.
+- TWEAK   : Improved MessageUtil so that it is easier to send colored messages.
+- FIXED   : ItemBlock registration method, so that blocks with items now actually work in 1.12.
+- FIXED   : Items that were automatically rendered using InfinityLib now actually render once again.
+- REMOVED : Methods deprecated in an earlier release.
+- UPGRADED: ReflectionHelper class.
+
+0.14.0
+- CHANGE: UNKNOWN.
+
+0.13.0
+- CHANGE: ported to 1.12.1
+
+0.12.1
+- FIXED: Debugger being broken
+
+0.12.0
+- TWEAK: Better dual wielded attacking
+- ADDED: Translation helper (wrapper should help making porting mc versions easier)
+- ADDED: Registering of sounds
+- FIXED: Container duplication bug
+
+0.11.0
+- CHANGE: Backfixed some overzealous changes with regard to agricraft which broke the other mods
+
+0.10.0
+- TWEAK: Change quad format used by dynamic renderers.
+- TWEAK: Upgrade InfinityProperty blockstate return types.
+- FIXED: Block rendering mixup due to hashing collision with cached quads. Now the render system works as well as it should.
+- TWEAK: Changed the way that IItemWithRecipe works, as to make it more generic and useful.
+
+0.9.0
+- FIXED: Container item duplication bug, wherein items could be duplicated by destroying blocks that were containers.
+- ADDED: SpawnItemInWorld helper function in WorldHelper, that allows for spawning items in the world in a safe manner that leaves clear logs.
+
+0.8.0
+- UPGRADED: Matrix math system.
+
+0.7.0
+- FIXED: Major quad caching error that caused severe memory and performance issues.
+- ADDED: Debug information system now uses consumers instead of lists, to allow for lower memory footprint, as well as immediate returns.
+
+0.6.2
+- FIXED: NPE from baked block model.
+
+0.6.1
+- ADDED: Null pointer checks.
+
+0.6.0
+- FIXED: Incorrect version number.
+
+0.5.0
+- FIXED: NPE?
+
+0.4.0
+- FIXED: infinite loop
+- FIXED: crash when mining blocks
+- CHANGE: reworked rendering some more, fixing bugs and running optimizations
+
+0.3.0
+- FIXED: some items being skipped when registering recipes
+- ADDED: various new functionalities
+- CHANGE: overhauled the networking system
+
+0.2.1
+- CHANGE: switched to quickmod
+
+0.2
+- ADDED: IIventory <-> IItemHandler wrappers
+- ADDED: ItemStack parser (domain:id:(optional)meta -> ItemStack)
+- ADDED: Methods to (de)serialize int[] objects to MessageBase
+
+0.1
+- Initial build
